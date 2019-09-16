@@ -15,12 +15,96 @@
         "level": "alpha",
         "patch": 0
       }
-    }
+    },
+    "software": {
+      "display": {
+        "title": "Example Blueprint for Mark",
+        "label": "Marks Blueprint"
+      }
+    },
+    "timestamp": "2019-09-16T11:48:27+10:00"
   },
   "software": {
     "base": {
+      "name": "Markengine",
+      "framework": "sinatra",
       "deployment_type": "web",
-      "http_protocol": "https_and_http"
+      "http_protocol": "https_only",
+      "memory": {
+        "required": 128,
+        "recommended": 256
+      }
+    },
+    "scripts": {
+      "start": {
+        "content": "#!/bin/sh\r\n\r\ngit pull\r\nbundle --standalone\r\nbundle exec rake db:migrate\r\nbundle exec thin  start\r\n\r\n\r\nsleep 120"
+      }
+    },
+    "installed_packages": [
+      {
+        "name": "UrbanFiesta",
+        "download_type": "git",
+        "source_url": "https://github.com/MarkRatjens/UrbanFiesta.git",
+        "destination": "/home/app"
+      }
+    ],
+    "service_configurations": [
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "database/sql/pgsql",
+        "variables": {
+          "database_name": "_Engines_Builder(engine_name)",
+          "database_host": "_Engines_System(pgsql_host)",
+          "dbusername": "_Engines_Builder(engine_name)",
+          "dbpassword": "_Engines_System(random(10))",
+          "collation": "C",
+          "encoding": "ut8",
+          "full_access": "false"
+        }
+      }
+    ],
+    "environment_variables": [
+      {
+        "name": "TWILIO_ACCOUNT_ID",
+        "mandatory": true,
+        "immutable": true,
+        "ask_at_build_time": true,
+        "input": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "TWILIO_AUTH_TOKEN",
+        "mandatory": true,
+        "immutable": true,
+        "ask_at_build_time": true,
+        "input": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "TWILIO_NYASA_SERVICE_SID",
+        "mandatory": true,
+        "immutable": true,
+        "ask_at_build_time": true,
+        "input": {
+          "type": "string"
+        }
+      }
+    ],
+    "file_write_permissions": [
+      {
+        "path": "/home/app",
+        "recursive": true
+      }
+    ],
+    "framework_specific": {
+      "rake_tasks": [
+        {
+          "action": "bundle exec db:migrate",
+          "always_run": true
+        }
+      ]
     }
   }
 }
