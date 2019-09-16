@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-16T12:29:09+10:00"
+    "timestamp": "2019-09-16T12:29:29+10:00"
   },
   "software": {
     "base": {
@@ -51,19 +51,6 @@
       }
     ],
     "service_configurations": [
-      {
-        "publisher_namespace": "EnginesSystem",
-        "type_path": "database/sql/pgsql",
-        "variables": {
-          "database_name": "_Engines_Builder(engine_name)",
-          "database_host": "_Engines_System(pgsql_host)",
-          "dbusername": "_Engines_Builder(engine_name)",
-          "dbpassword": "_Engines_System(random(10))",
-          "collation": "C",
-          "encoding": "ut8",
-          "full_access": "false"
-        }
-      },
       {
         "publisher_namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
