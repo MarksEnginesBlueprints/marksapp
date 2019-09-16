@@ -22,11 +22,11 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-16T12:29:29+10:00"
+    "timestamp": "2019-09-16T12:34:19+10:00"
   },
   "software": {
     "base": {
-      "name": "Markengine",
+      "name": "markengine",
       "framework": "sinatra",
       "deployment_type": "web",
       "http_protocol": "https_only",
@@ -53,14 +53,15 @@
     "service_configurations": [
       {
         "publisher_namespace": "EnginesSystem",
-        "type_path": "database/sql/mysql",
+        "type_path": "database/sql/pgsql",
         "variables": {
           "database_name": "_Engines_Builder(engine_name)",
-          "database_host": "_Engines_System(mysql_host)",
-          "db_username": "_Engines_Builder(engine_name)",
-          "db_password": "_Engines_System(random(10))",
-          "collation": "utf8_general_ci",
-          "full_access": "false"
+          "database_host": "_Engines_System(pgsql_host)",
+          "dbusername": "_Engines_Builder(engine_name)",
+          "dbpassword": "_Engines_System(random(10))",
+          "collation": "C",
+          "encoding": "ascii",
+          "full_access": "fals"
         }
       }
     ],
