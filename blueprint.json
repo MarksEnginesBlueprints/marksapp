@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-16T12:17:57+10:00"
+    "timestamp": "2019-09-16T12:20:33+10:00"
   },
   "software": {
     "base": {
@@ -43,9 +43,11 @@
     "installed_packages": [
       {
         "name": "UrbanFiesta",
-        "download_type": "http(s)",
+        "download_type": "git",
         "source_url": "https://github.com/MarkRatjens/UrbanFiesta.git",
-        "destination": "/home/app"
+        "destination": "/home/app",
+        "extraction_command": "git",
+        "path_to_extracted": "UrbanFiesta"
       }
     ],
     "service_configurations": [
