@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-17T17:09:23+10:00"
+    "timestamp": "2019-09-18T09:42:30+10:00"
   },
   "software": {
     "base": {
@@ -37,7 +37,7 @@
     },
     "scripts": {
       "start": {
-        "content": "#!/bin/sh\r\n\r\ngit pull\r\nbundle --standalone\r\nbundle exec rake db:migrate\r\nbundle exec thin  start\r\n\r\n\r\nsleep 120"
+        "content": "#!/bin/sh\r\n\r\ncd /home/app\r\nif test -f Gemfile.dist\r\n then\r\n  cp Gemfile.dist Gemfile\r\nfi\r\n\r\ngit pull\r\n\r\ngrep thin Gemfile\r\n if test $? -ne 0\r\n  then\r\n   cp Gemfile Gemfile.dist\r\n   echo 'gem \"thin\"' >Gemfile\r\n fi\r\n \r\nbundle --standalone\r\nbundle exec rake db:migrate\r\n\r\nthin  start\r\n\r\n\r\nsleep 120"
       }
     },
     "installed_packages": [
