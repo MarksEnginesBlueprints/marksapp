@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-17T07:53:12+10:00"
+    "timestamp": "2019-09-17T14:23:36+10:00"
   },
   "software": {
     "base": {
@@ -110,7 +110,7 @@
     "framework_specific": {
       "rake_tasks": [
         {
-          "action": "bundle exec db:migrate",
+          "action": "db:migrate",
           "always_run": true
         }
       ]
