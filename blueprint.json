@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-20T10:26:34+10:00"
+    "timestamp": "2019-09-20T11:25:43+10:00"
   },
   "software": {
     "base": {
@@ -37,7 +37,7 @@
     },
     "scripts": {
       "start": {
-        "content": "#!/bin/sh\r\n\r\ngit pull\r\n\r\nbundle --standalone\r\nbundle exec rake db:migrate\r\n\r\nthin  start\r\n\r\nsleep 120"
+        "content": "#!/bin/sh\r\n\r\ncd /home/app\r\n\r\ngit pull\r\n\r\nbundle --standalone\r\nbundle exec rake db:migrate\r\n\r\nrackup\r\n\r\nsleep 120"
       }
     },
     "installed_packages": [
