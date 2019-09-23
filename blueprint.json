@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-23T14:23:48+10:00"
+    "timestamp": "2019-09-23T14:53:21+10:00"
   },
   "software": {
     "base": {
@@ -30,6 +30,7 @@
       "framework": "sinatra",
       "deployment_type": "web",
       "http_protocol": "https_only",
+      "framework_port_override": 9292,
       "memory": {
         "required": 128,
         "recommended": 256
