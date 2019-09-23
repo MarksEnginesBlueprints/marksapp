@@ -22,7 +22,7 @@
         "label": "Marks Blueprint"
       }
     },
-    "timestamp": "2019-09-23T14:53:21+10:00"
+    "timestamp": "2019-09-24T08:19:34+10:00"
   },
   "software": {
     "base": {
@@ -31,6 +31,7 @@
       "deployment_type": "web",
       "http_protocol": "https_only",
       "framework_port_override": 9292,
+      "continuous_deployment": true,
       "memory": {
         "required": 128,
         "recommended": 256
